@@ -1,32 +1,17 @@
 import React from 'react';
-import {
-    StatusBar,
-    StyleSheet,
-    Text,
-    useColorScheme,
-    View,
-} from 'react-native';
-
+import { Provider } from 'react-redux';
+import { StyleSheet, Text, View } from 'react-native';
+import { store } from "../store";
+import Home from "../screens/Home";
 
 const App = () => {
-    const isDarkMode = useColorScheme() === 'dark';
 
     return (
-        <View style={style.container}>
-            <Text style={{textAlign: "center"}}>
-                Lets build a Uber
-            </Text>
-        </View>
+        <Provider store={store}>
+            <Home />
+        </Provider>
+
     );
 };
-
-const style = StyleSheet.create( {
-    container: {
-        flex: 1,
-        alignContent: "center",
-        justifyContent: "center",
-        backgroundColor: "#fff"
-    }
-} );
 
 export default App;

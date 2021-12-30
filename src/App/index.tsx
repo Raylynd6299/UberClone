@@ -1,16 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { store } from "../store";
 import Home from "../screens/Home";
 
 const App = () => {
 
     return (
-        <Provider store={store}>
-            <Home />
+        <Provider store={ store }>
+            <SafeAreaProvider>
+                <Home />
+            </SafeAreaProvider>
         </Provider>
-
     );
 };
 
